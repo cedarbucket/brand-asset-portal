@@ -1,95 +1,122 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+import React from "react";
+import { Box, Row, Text } from "../components";
+import styled from "styled-components";
+import { ThemeSwitch } from "@/components/ThemeSwitch";
 
-export default function Home() {
+const GlowyText = styled(Text)`
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
+`;
+
+export default function HomePage() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <Box
+      width={"100%"}
+      height={"100%"}
+      color="white"
+      padding={"xxxl"}
+      gap={"xxl"}
+      alignItems={"center"}
+      backgroundColor={"background"}
+    >
+      <Row
+        width={"100%"}
+        alignItems={"center"}
+        justifyContent="center"
+        position={"relative"}
+      >
+        <GlowyText
+          color="foreground"
+          fontSize="5rem"
+          textAlign="center"
+          letterSpacing={5}
+        >
+          Next.js Boilerplate
+        </GlowyText>
+        <Box position={"absolute"} right={0}>
+          <ThemeSwitch />
+        </Box>
+      </Row>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      <Box width={"80%"} textAlign="center">
+        <Text color="foreground" fontSize="2rem" lineHeight="1.2">
+          Welcome to the Next.js boilerplate repository! This project includes
+          everything you need to start building modern, performant web
+          applications with ease.
+        </Text>
+      </Box>
+
+      <Row justifyContent="center">
+        <Box textAlign="left" gap={"l"}>
+          <Box as="h2" fontSize="1.5rem">
+            Key Features
+          </Box>
+          <Text color="foreground" fontSize="1.1rem">
+            🚀 Seamless integration with the Next.js App Router, ensuring
+            advanced and powerful routing for your project.
+          </Text>
+          <Text color="foreground" fontSize="1.1rem">
+            🛠 Built with TypeScript for a better developer experience and
+            type-safety across your app.
+          </Text>
+          <Text color="foreground" fontSize="1.1rem">
+            💅 Styled-components for scoped CSS with support for dynamic
+            styling.
+          </Text>
+          <Text color="foreground" fontSize="1.1rem">
+            🎨 Styled-system for responsive design and theming, allowing
+            flexible layouts and UI consistency.
+          </Text>
+          <Text color="foreground" fontSize="1.1rem">
+            🌗 Theme switching capability between Dark and Light modes to
+            provide a personalized experience.
+          </Text>
+          <Text color="foreground" fontSize="1.1rem">
+            📦 Includes basic components like <strong>Box</strong> and{" "}
+            <strong>Row</strong> to speed up layout development.
+          </Text>
+        </Box>
+      </Row>
+
+      <Box alignItems={"center"} gap={"l"}>
+        <Box as="h2" fontSize="1.5rem">
+          How to Use
+        </Box>
+        <Text color="foreground" fontSize="1.1rem" lineHeight="1.6">
+          Clone the repository, install the dependencies, and get started
+          building your Next.js app.
+        </Text>
+        <Box bg="grey" borderRadius="m" paddingX={"xl"} py={"m"}>
+          <Text
+            color="foreground"
+            as="code"
+            fontSize="1rem"
+            display="block"
+            lineHeight="1.8"
           >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+            git clone https://github.com/wajahatbanday/nextjs-boilerplate.git
+            <br />
+            cd nextjs-boilerplate
+            <br />
+            yarn
+            <br />
+            yarn dev
+          </Text>
+        </Box>
+      </Box>
+
+      <Box textAlign="center" width="100%" gap={"xs"}>
+        <Text color="foreground" fontSize="0.875rem">
+          Created by Wajahat Banday
+        </Text>
+        <Text color="foreground" fontSize="0.875rem">
+          github: /wajahatbanday
+        </Text>
+        <Text color="foreground" fontSize="0.875rem">
+          v1.0
+        </Text>
+      </Box>
+    </Box>
   );
 }
