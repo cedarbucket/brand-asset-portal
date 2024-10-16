@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import BaseLayout from "./base-layout";
 
 export const metadata: Metadata = {

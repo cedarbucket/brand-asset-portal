@@ -49,9 +49,9 @@ export default function HomePage() {
 
       <Row justifyContent="center">
         <Box textAlign="left" gap={"l"}>
-          <Box as="h2" fontSize="1.5rem">
+          <Text fontSize="1.5rem" color="foreground">
             Key Features
-          </Box>
+          </Text>
           <Text color="foreground" fontSize="1.1rem">
             🚀 Seamless integration with the Next.js App Router, ensuring
             advanced and powerful routing for your project.
@@ -80,9 +80,9 @@ export default function HomePage() {
       </Row>
 
       <Box alignItems={"center"} gap={"l"}>
-        <Box as="h2" fontSize="1.5rem">
+        <Text fontSize="1.5rem" color="foreground">
           How to Use
-        </Box>
+        </Text>
         <Text color="foreground" fontSize="1.1rem" lineHeight="1.6">
           Clone the repository, install the dependencies, and get started
           building your Next.js app.
@@ -95,7 +95,8 @@ export default function HomePage() {
             display="block"
             lineHeight="1.8"
           >
-            git clone https://github.com/wajahatbanday/nextjs-boilerplate.git
+            git clone
+            https://github.com/wajahatbanday/nextjs-styled-boilerplate.git
             <br />
             cd nextjs-boilerplate
             <br />

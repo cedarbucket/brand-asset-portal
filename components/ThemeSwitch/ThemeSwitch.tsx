@@ -110,6 +110,13 @@ export const ThemeSwitch = () => {
   const { theme, setTheme } = useContext(ThemeState);
   const [isChecked, setIsChecked] = useState(theme === "dark");
 
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("themeMode");
+    if (storedTheme) {
+      setIsChecked(storedTheme === "dark");
+    }
+  }, []);
+
   const handleChange = () => {
     setIsChecked(!isChecked);
   };
@@ -117,10 +124,10 @@ export const ThemeSwitch = () => {
   useEffect(() => {
     if (isChecked) {
       setTheme("dark");
-      localStorage.setItem("theme", "dark");
+      localStorage.setItem("themeMode", "dark");
     } else {
       setTheme("light");
-      localStorage.setItem("theme", "light");
+      localStorage.setItem("themeMode", "light");
     }
   }, [isChecked, setTheme]);
 
