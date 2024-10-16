@@ -24,6 +24,7 @@ import {
 } from "styled-system";
 import { StyledWithConfig } from "@/theme/StyledWithConfig";
 import {
+  BASE_COLORS,
   ThemedBorderRadiusProps,
   ThemedColorProps,
   ThemedSpaceProps,
@@ -83,4 +84,11 @@ export const CenterBox = styled(Box)`
   justify-content: center;
   align-items: center;
   ${flexbox}
+`;
+
+export const HoverBox = styled(CenterBox)<BoxProps>`
+  &:hover {
+    background-color: ${BASE_COLORS.lightGrey};
+    cursor: pointer;
+  }
 `;

@@ -115,7 +115,7 @@ export default function HomePage() {
           github: /wajahatbanday
         </Text>
         <Text color="foreground" fontSize="0.875rem">
-          v1.0
+          v1.0.2
         </Text>
       </Box>
     </Box>
