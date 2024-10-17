@@ -6,11 +6,11 @@ export const BASE_BUTTON_VARIANTS = {
     color: BASE_COLORS.white,
     border: "none",
     borderRadius: BASE_BORDER_RADII.xs,
-    paddingLeft: BASE_SPACING.xxl,
-    paddingRight: BASE_SPACING.xxl,
+    paddingLeft: BASE_SPACING["2xl"],
+    paddingRight: BASE_SPACING["2xl"],
     paddingTop: BASE_SPACING.l,
     paddingBottom: BASE_SPACING.l,
-    fontSize: BASE_SPACING.xxl,
+    fontSize: BASE_SPACING["2xl"],
   },
 };
 export type AppButtonVariants = keyof typeof BASE_BUTTON_VARIANTS;

@@ -123,7 +123,7 @@ export const FileInputBox: React.FC<FileInputBoxProps> = ({
             {...rest}
             bg={"white"}
             gap={"m"}
-            px={"xxxxl"}
+            px={"2xl"}
             py={"xl"}
             borderRadius={"xl"}
             alignItems={"center"}

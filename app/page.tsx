@@ -30,8 +30,8 @@ export default function HomePage() {
       width={"100%"}
       height={"100%"}
       color="white"
-      padding={"xxxl"}
-      gap={"xxl"}
+      padding={"3xl"}
+      gap={"xl"}
       alignItems={"center"}
       backgroundColor={"background"}
     >
@@ -43,7 +43,7 @@ export default function HomePage() {
       >
         <GlowyText
           color="foreground"
-          fontSize="5rem"
+          fontSize="4rem"
           textAlign="center"
           letterSpacing={5}
         >
@@ -70,7 +70,7 @@ export default function HomePage() {
           width={"100%"}
           flexWrap={"wrap"}
           textAlign="left"
-          gap={"xxxl"}
+          gap={"2xl"}
           justifyContent={"center"}
         >
           {featureList.map((feature, index) => (
@@ -128,7 +128,7 @@ export default function HomePage() {
           github: /wajahatbanday
         </Text>
         <Text color="foreground" fontSize="0.875rem">
-          v1.0.3
+          v1.0.4
         </Text>
       </Box>
     </Box>

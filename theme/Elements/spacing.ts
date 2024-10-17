@@ -1,17 +1,16 @@
 export const BASE_SPACING = {
   none: 0,
-  xxxs: 1,
-  xs: 3,
-  s: 5,
+  xxs: 2,
+  xs: 4,
+  s: 6,
   m: 10,
   l: 15,
-  xl: 20,
-  xxl: 25,
-  xxxl: 30,
-  xxxxl: 50,
-  xlg: 80,
-  xxlg: 120,
-  header: 80,
+  xl: 22,
+  "2xl": 33,
+  "3xl": 50,
+  "4xl": 75,
+  "5xl": 100,
+  "6xl": 150,
 };
 
 export type AppSpaceProps = keyof typeof BASE_SPACING;
