@@ -2,6 +2,7 @@ import { BASE_COLORS, BASE_BORDER_RADII, BASE_SPACING } from ".";
 
 export const BASE_BUTTON_VARIANTS = {
   primary: {
+    backgroundColor: BASE_COLORS.primary,
     color: BASE_COLORS.white,
     border: "none",
     borderRadius: BASE_BORDER_RADII.xs,

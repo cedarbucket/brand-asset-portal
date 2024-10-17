@@ -1,6 +1,14 @@
 "use client";
 import { BASE_COLORS } from "@/theme";
-import { Box, Column, Row, ShadowBox, StyledInputBox, Text } from "../styled";
+import {
+  Box,
+  Column,
+  Row,
+  ShadowBox,
+  StyledInputBox,
+  StyledInputBoxProps,
+  Text,
+} from "../styled";
 import { ChangeEvent } from "react";
 import { useField } from "formik";
 import { useCallback } from "react";
@@ -9,31 +17,34 @@ export type InputBoxProps = {
   name: string;
   placeholder: string;
   placeholderColor?: string;
-  type?: "text" | "number" | "email" | "file";
-  border?: boolean;
+  type?: "text" | "number" | "email";
   label?: string;
   labelColor?: keyof typeof BASE_COLORS;
+  width?: string;
   boxShadow?: boolean;
-  height?: number;
   errors?: {
     [key: string]: string;
   };
   touched?: {
     [key: string]: boolean;
   };
-};
+} & Omit<
+  StyledInputBoxProps,
+  "type" | "name" | "onChange" | "onBlur" | "value"
+>;
+
 export const InputBox: React.FC<InputBoxProps> = ({
   name,
   placeholder,
   type,
-  border,
   label,
   labelColor,
+  width,
   boxShadow,
-  height,
   placeholderColor,
   errors,
   touched,
+  ...rest
 }) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [field, meta, helpers] = useField(name);
@@ -50,10 +61,10 @@ export const InputBox: React.FC<InputBoxProps> = ({
   const isTouched = touched ? touched[name] : "";
 
   return (
-    <Column gap={label ? "m" : "none"} width={"100%"}>
+    <Column gap={label ? "m" : "none"} width={width ? width : "100%"}>
       <Row px={"l"} width={"100%"} justifyContent={"space-between"}>
         {label ? (
-          <Text fontSize={18} color={labelColor ? labelColor : "white"}>
+          <Text fontSize={18} color={labelColor ? labelColor : "foreground"}>
             {label}
           </Text>
         ) : null}
@@ -68,32 +79,33 @@ export const InputBox: React.FC<InputBoxProps> = ({
       {boxShadow ? (
         <ShadowBox borderRadius={"m"} overflow={"hidden"}>
           <StyledInputBox
-            border={border ? `1px solid ${BASE_COLORS.primary}` : "none"}
-            width={"100%"}
+            border={"none"}
+            height={"50px"}
             name={name}
             onChange={handleChange}
             onBlur={handleBlur}
-            height={height ? `${height}px` : "60px"}
             placeholder={placeholder}
             type={type}
             value={field.value}
-            placeholderColor={placeholderColor}
+            placeholderColor={
+              placeholderColor ? placeholderColor : "foreground"
+            }
+            {...rest}
           />
         </ShadowBox>
       ) : (
         <StyledInputBox
+          borderRadius={"m"}
           border={"none"}
-          borderBottom={`1px solid ${BASE_COLORS.primary}`}
-          width={"100%"}
+          height={"50px"}
           name={name}
           onChange={handleChange}
           onBlur={handleBlur}
-          backgroundColor="black"
-          height={height ? `${height}px` : "60px"}
           placeholder={placeholder}
-          color={"white"}
           type={type}
           value={field.value}
+          placeholderColor={placeholderColor ? placeholderColor : "foreground"}
+          {...rest}
         />
       )}
     </Column>

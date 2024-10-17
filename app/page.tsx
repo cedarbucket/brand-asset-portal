@@ -1,15 +1,30 @@
 "use client";
 import React from "react";
-import { Box, Row, Text } from "../components";
+import { Box, Button, Row, ShadowBox, Text } from "../components";
 import styled from "styled-components";
 import { ThemeSwitch } from "@/components/ThemeSwitch";
+import { useRouter } from "next/navigation";
 
 const GlowyText = styled(Text)`
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
     0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
 `;
 
+const featureList = [
+  "🚀 Seamless integration with the Next.js App Router, ensuring advanced and powerful routing for your project.",
+  " 🛠 Built with TypeScript for a better developer experience and type-safety across your app.",
+  "💅 Styled-components for scoped CSS with support for dynamic styling.",
+  "🎨 Styled-system for responsive design and theming, allowing flexible layouts and UI consistency.",
+  " 🌗 Theme switching capability between Dark and Light modes to provide a personalized experience.",
+  `📦 Includes basic components like Box, Row, Column, Input Box, Text Area, Date Range Picker, etc to speed up layout development.`,
+];
+
 export default function HomePage() {
+  const router = useRouter();
+
+  const handleNavigateToComponentView = () => {
+    router.push("/components");
+  };
   return (
     <Box
       width={"100%"}
@@ -40,44 +55,42 @@ export default function HomePage() {
       </Row>
 
       <Box width={"80%"} textAlign="center">
-        <Text color="foreground" fontSize="2rem" lineHeight="1.2">
+        <Text color="foreground" fontSize="1.3rem" lineHeight="1.1">
           Welcome to the Next.js boilerplate repository! This project includes
           everything you need to start building modern, performant web
           applications with ease.
         </Text>
       </Box>
 
-      <Row justifyContent="center">
-        <Box textAlign="left" gap={"l"}>
-          <Text fontSize="1.5rem" color="foreground">
-            Key Features
-          </Text>
-          <Text color="foreground" fontSize="1.1rem">
-            🚀 Seamless integration with the Next.js App Router, ensuring
-            advanced and powerful routing for your project.
-          </Text>
-          <Text color="foreground" fontSize="1.1rem">
-            🛠 Built with TypeScript for a better developer experience and
-            type-safety across your app.
-          </Text>
-          <Text color="foreground" fontSize="1.1rem">
-            💅 Styled-components for scoped CSS with support for dynamic
-            styling.
-          </Text>
-          <Text color="foreground" fontSize="1.1rem">
-            🎨 Styled-system for responsive design and theming, allowing
-            flexible layouts and UI consistency.
-          </Text>
-          <Text color="foreground" fontSize="1.1rem">
-            🌗 Theme switching capability between Dark and Light modes to
-            provide a personalized experience.
-          </Text>
-          <Text color="foreground" fontSize="1.1rem">
-            📦 Includes basic components like <strong>Box</strong> and{" "}
-            <strong>Row</strong> to speed up layout development.
-          </Text>
+      <Box justifyContent="center" alignItems={"center"} gap={"l"}>
+        <Text fontSize="1.5rem" color="foreground">
+          Key Features
+        </Text>
+        <Row
+          width={"100%"}
+          flexWrap={"wrap"}
+          textAlign="left"
+          gap={"xxxl"}
+          justifyContent={"center"}
+        >
+          {featureList.map((feature, index) => (
+            <ShadowBox width={"30%"} key={index} p={"m"} borderRadius={"s"}>
+              <Text color="foreground" fontSize="1.1rem">
+                {feature}
+              </Text>
+            </ShadowBox>
+          ))}
+        </Row>
+        <Box width={"100%"} alignItems={"center"}>
+          <Button
+            variant="primary"
+            width={"50%"}
+            onClick={handleNavigateToComponentView}
+          >
+            Click Here To View Components
+          </Button>
         </Box>
-      </Row>
+      </Box>
 
       <Box alignItems={"center"} gap={"l"}>
         <Text fontSize="1.5rem" color="foreground">
@@ -115,7 +128,7 @@ export default function HomePage() {
           github: /wajahatbanday
         </Text>
         <Text color="foreground" fontSize="0.875rem">
-          v1.0.2
+          v1.0.3
         </Text>
       </Box>
     </Box>

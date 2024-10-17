@@ -21,7 +21,7 @@ import {
   WidthProps,
 } from "styled-system";
 
-type InputBoxProps = BackgroundProps &
+export type StyledInputBoxProps = BackgroundProps &
   BorderProps &
   LayoutProps &
   ThemedSpaceProps &
@@ -40,7 +40,7 @@ type InputBoxProps = BackgroundProps &
 
 export const StyledInputBox = styled.input.withConfig(
   StyledWithConfig
-)<InputBoxProps>`
+)<StyledInputBoxProps>`
   ${width}
   outline: none;
   font-family: DMSansRegular;

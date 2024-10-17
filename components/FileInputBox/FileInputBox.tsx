@@ -1,17 +1,17 @@
 "use client";
 import React, { ChangeEvent, useRef, useState } from "react";
-import { StyledInputBox, Box, Text, ShadowBox, Row } from "../styled";
+import { StyledInputBox, Box, Text, ShadowBox, Row, BoxProps } from "../styled";
 import axios from "axios";
 import { useField, useFormikContext } from "formik";
 import Image from "next/image";
 import { BASE_COLORS } from "@/theme";
 import { Icon } from "../Icon";
 
-export type FileInputBoxProps = {
+export type FileInputBoxProps = BoxProps & {
   label?: string;
   labelColor?: keyof typeof BASE_COLORS;
   name: string;
-  type: "t1" | "t2";
+  type: "square" | "rectangle";
 };
 
 async function uploadFile(f: File) {
@@ -40,6 +40,7 @@ export const FileInputBox: React.FC<FileInputBoxProps> = ({
   label,
   type,
   labelColor,
+  ...rest
 }) => {
   const [field] = useField(name);
   const { setFieldValue } = useFormikContext();
@@ -69,14 +70,15 @@ export const FileInputBox: React.FC<FileInputBoxProps> = ({
     <Box gap={"m"} width={"fit-content"}>
       {label ? (
         <Box pl={"l"} width={"100%"}>
-          <Text fontSize={18} color={labelColor ? labelColor : "black"}>
+          <Text fontSize={18} color={labelColor ? labelColor : "foreground"}>
             {label}
           </Text>
         </Box>
       ) : null}
-      {type === "t1" ? (
+      {type === "square" ? (
         <ShadowBox
-          backgroundColor={"primary"}
+          {...rest}
+          bg={"white"}
           borderRadius={"m"}
           width={"170px"}
           height={"170px"}
@@ -100,49 +102,58 @@ export const FileInputBox: React.FC<FileInputBoxProps> = ({
             <>
               <Icon
                 name={error ? "error" : "upload"}
-                color={BASE_COLORS.white}
+                color={BASE_COLORS.primary}
                 size="2x"
               />
-              <Text fontSize={18} color="white">
-                {loading ? "Uploading" : error ? "Error" : "Upload"}
+              <Text fontSize={18} color="primary">
+                {loading
+                  ? "Uploading"
+                  : error
+                  ? "Error"
+                  : label
+                  ? label
+                  : "Upload"}
               </Text>
             </>
           )}
         </ShadowBox>
-      ) : type === "t2" ? (
-        <Row
-          gap={"m"}
-          px={"xxxxl"}
-          py={"xl"}
-          bg={"primary"}
-          borderRadius={"xl"}
-          alignItems={"center"}
-          onClick={handleUploadButtonClick}
-          position={"relative"}
-          style={{ cursor: "pointer" }}
-        >
-          <Text fontSize={20} color="white">
-            Upload Profile Picture
-          </Text>
-          <Icon name={"upload"} size="1x" color={BASE_COLORS.white} />
-          {field.value !== "" ? (
-            <ShadowBox
-              borderRadius={"m"}
-              overflow={"hidden"}
-              position={"absolute"}
-              top={"110%"}
-              left={"20%"}
-            >
-              <Image
-                src={field.value}
-                alt={"Profile Picture"}
-                width={190}
-                height={190}
-                style={{ borderRadius: "10px" }}
-              />
-            </ShadowBox>
-          ) : null}
-        </Row>
+      ) : type === "rectangle" ? (
+        <ShadowBox borderRadius={"xl"}>
+          <Row
+            {...rest}
+            bg={"white"}
+            gap={"m"}
+            px={"xxxxl"}
+            py={"xl"}
+            borderRadius={"xl"}
+            alignItems={"center"}
+            onClick={handleUploadButtonClick}
+            position={"relative"}
+            style={{ cursor: "pointer" }}
+          >
+            <Text fontSize={20} color="primary">
+              {label ? label : "Upload"}
+            </Text>
+            <Icon name={"upload"} size="1x" color={BASE_COLORS.primary} />
+            {field.value !== "" ? (
+              <ShadowBox
+                borderRadius={"m"}
+                overflow={"hidden"}
+                position={"absolute"}
+                top={"110%"}
+                left={"20%"}
+              >
+                <Image
+                  src={field.value}
+                  alt={"Image"}
+                  width={190}
+                  height={190}
+                  style={{ borderRadius: "10px" }}
+                />
+              </ShadowBox>
+            ) : null}
+          </Row>
+        </ShadowBox>
       ) : null}
       <StyledInputBox
         ref={hiddenFileInputRef}

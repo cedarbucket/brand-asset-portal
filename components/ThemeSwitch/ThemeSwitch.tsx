@@ -1,3 +1,4 @@
+"use client";
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import SunSVG from "@/public/assets/images/svgs/sun.svg";

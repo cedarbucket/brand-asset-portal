@@ -4,37 +4,38 @@ import { Box, Column, Row, ShadowBox, Text } from "../styled";
 import { ChangeEvent } from "react";
 import { useField } from "formik";
 import { useCallback } from "react";
-import { StyledTextArea } from "../styled/StyledTextArea";
+import { StyledTextArea, StyledTextAreaProps } from "../styled/StyledTextArea";
 
 export type TextAreaProps = {
   name: string;
   placeholder: string;
   placeholderColor?: string;
-  type?: "text" | "number" | "email" | "password" | "file";
-  border?: boolean;
   label?: string;
   labelColor?: keyof typeof BASE_COLORS;
+  width?: string;
   boxShadow?: boolean;
-  height?: number;
   errors?: {
     [key: string]: string;
   };
   touched?: {
     [key: string]: boolean;
   };
-};
+} & Omit<
+  StyledTextAreaProps,
+  "type" | "name" | "onChange" | "onBlur" | "value"
+>;
 
 export const TextArea: React.FC<TextAreaProps> = ({
   name,
   placeholder,
-
   label,
   labelColor,
   boxShadow,
-
   placeholderColor,
   errors,
   touched,
+  width,
+  ...rest
 }) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [field, meta, helpers] = useField(name);
@@ -48,14 +49,13 @@ export const TextArea: React.FC<TextAreaProps> = ({
   }, [helpers]);
 
   const errorMessage = errors ? errors[name] : "";
-
   const isTouched = touched ? touched[name] : "";
 
   return (
-    <Column gap={label ? "m" : "none"} width={"100%"}>
+    <Column gap={label ? "m" : "none"} width={width ? width : "100%"}>
       <Row px={"l"} width={"100%"} justifyContent={"space-between"}>
         {label ? (
-          <Text fontSize={18} color={labelColor ? labelColor : "white"}>
+          <Text fontSize={18} color={labelColor ? labelColor : "foreground"}>
             {label}
           </Text>
         ) : null}
@@ -70,28 +70,34 @@ export const TextArea: React.FC<TextAreaProps> = ({
       {boxShadow ? (
         <ShadowBox borderRadius={"m"} overflow={"hidden"}>
           <StyledTextArea
-            border={`1px solid ${BASE_COLORS.primary}`}
-            maxWidth={"100%"}
+            borderRadius={"m"}
+            border={"none"}
+            height={"100px"}
+            width={"100%"}
             name={name}
             onChange={handleChange}
             onBlur={handleBlur}
             placeholder={placeholder}
             value={field.value}
-            placeholderColor={placeholderColor}
+            placeholderColor={
+              placeholderColor ? placeholderColor : "foreground"
+            }
+            {...rest}
           />
         </ShadowBox>
       ) : (
         <StyledTextArea
-          border={`1px solid ${BASE_COLORS.grey}`}
-          maxWidth={"100%"}
+          borderRadius={"m"}
+          border={"none"}
+          height={"100px"}
+          width={"100%"}
           name={name}
           onChange={handleChange}
           onBlur={handleBlur}
-          borderRadius={"m"}
           placeholder={placeholder}
           value={field.value}
-          backgroundColor="black"
-          color="white"
+          placeholderColor={placeholderColor ? placeholderColor : "foreground"}
+          {...rest}
         />
       )}
     </Column>

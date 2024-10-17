@@ -1,15 +1,25 @@
 "use client";
 import styled from "styled-components";
-import { Box, HoverBox, BoxProps, Row, Text } from "@/components";
+import {
+  Box,
+  HoverBox,
+  BoxProps,
+  Row,
+  Text,
+  ShadowBox,
+  CenterBox,
+} from "@/components";
 import { useField, useFormikContext } from "formik";
 import { BASE_COLORS } from "@/theme";
 import { useState } from "react";
 import { getLighterColor } from "@/utils/getLighterColor";
 
-type DateRangePickerProps = {
+type DateRangePickerProps = BoxProps & {
   name: string;
   label?: string;
   labelColor?: keyof typeof BASE_COLORS;
+  width?: string;
+  height?: string;
 };
 
 type DateRange = {
@@ -28,7 +38,7 @@ const MonthNavigation = styled(Row)`
   align-items: center;
 `;
 
-const NavButton = styled(HoverBox)`
+const NavButton = styled(CenterBox)`
   width: 30px;
   height: 30px;
   cursor: pointer;
@@ -37,13 +47,13 @@ const NavButton = styled(HoverBox)`
 
 const MonthYear = styled.span`
   font-weight: bold;
-  color: ${BASE_COLORS.white};
+  color: ${BASE_COLORS.foreground};
 `;
 
 const DaysGrid = styled(Box)`
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 4px;
+  gap: 10px;
   padding: 16px;
 `;
 
@@ -53,8 +63,9 @@ interface DayCellProps extends BoxProps {
 }
 
 const DayCell = styled(HoverBox)<DayCellProps>`
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.16);
   aspect-ratio: 1;
-  border-radius: 10px;
+  border-radius: 5px;
   font-size: 14px;
   cursor: pointer;
   background-color: ${(props) =>
@@ -63,13 +74,14 @@ const DayCell = styled(HoverBox)<DayCellProps>`
       : props.isInRange
       ? getLighterColor(BASE_COLORS.primary)
       : "transparent"};
-  color: ${(props) => (props.isSelected ? "white" : "white")};
+  color: ${(props) => (props.isSelected ? "white" : "black")};
 `;
 
 const DateRangePicker: React.FC<DateRangePickerProps> = ({
   name,
   label,
   labelColor,
+  width,
 }) => {
   const [field, meta] = useField<DateRange>(name);
   const { setFieldValue } = useFormikContext();
@@ -165,19 +177,19 @@ const DateRangePicker: React.FC<DateRangePickerProps> = ({
   };
 
   return (
-    <Box width={"100%"} height={"fit-content"} gap={"m"}>
+    <Box width={width ? width : "300px"} height={"fit-content"} gap={"m"}>
       {label ? (
         <Box px={"l"} width={"100%"}>
-          <Text fontSize={18} color={labelColor ? labelColor : "white"}>
+          <Text fontSize={18} color={labelColor ? labelColor : "foreground"}>
             {label}
           </Text>
         </Box>
       ) : null}
-      <Box
+      <ShadowBox
         borderRadius={"m"}
         width={"100%"}
         height={"fit-content"}
-        border={`1px solid ${BASE_COLORS.white}`}
+        backgroundColor={"white"}
       >
         <Header>
           <MonthNavigation>
@@ -215,7 +227,7 @@ const DateRangePicker: React.FC<DateRangePickerProps> = ({
           ))}
         </DaysGrid>
         {meta.touched && meta.error && <Box color="error">{meta.error}</Box>}
-      </Box>
+      </ShadowBox>
     </Box>
   );
 };

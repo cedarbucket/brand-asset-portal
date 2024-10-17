@@ -15,7 +15,7 @@ import {
 import { BASE_COLORS, ThemedColorProps, ThemedSpaceProps } from "@/theme";
 import { ChangeEvent } from "react";
 
-type StyledTextAreaProps = BackgroundProps &
+export type StyledTextAreaProps = BackgroundProps &
   BorderProps &
   LayoutProps &
   ThemedSpaceProps &
@@ -41,6 +41,7 @@ export const StyledTextArea = styled.textarea.withConfig(
   font-family: DMSansRegular;
   font-size: 15px;
   padding: 10px;
+  resize: none;
   ${background};
   ${color};
   ${border}

@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+import { IconDefinition, SizeProp } from "@fortawesome/fontawesome-svg-core";
 import {
   faCirclePlay,
   faWallet,
@@ -10,15 +10,17 @@ import {
   faPenToSquare,
   faCircleExclamation,
   faArrowUpFromBracket,
+  faHome,
 } from "@fortawesome/free-solid-svg-icons";
 
 type IconProps = {
   name: string;
-  size?: "1x" | "2x" | "3x" | "4x" | "5x";
+  size?: SizeProp;
   color: string;
 };
 
 const IconMap: Record<string, IconDefinition> = {
+  home: faHome,
   advertisement: faCirclePlay,
   wallet: faWallet,
   settings: faGear,
