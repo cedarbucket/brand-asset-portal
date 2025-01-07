@@ -135,10 +135,10 @@ export const ThemeSwitch = () => {
   return (
     <SwitchWrapper>
       <Sun>
-        <Image src={SunSVG} alt={""} />
+        <Image src={SunSVG} alt={"Sun"} />
       </Sun>
       <Moon>
-        <Image src={MoonSVG} alt={""} width={18} />
+        <Image src={MoonSVG} alt={"Moon"} width={18} />
       </Moon>
       <HiddenCheckbox checked={isChecked} onChange={handleChange} />
       <Slider />
