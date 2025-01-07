@@ -1,8 +1,8 @@
 "use client";
-import { Box, Header } from "@/components";
+import { Box, Footer, Header } from "@/components";
 import { ThemeStateProvider } from "@/context/ThemeState";
 import { AppThemeProvider } from "@/theme/AppThemeProvider";
-import { GlobalStyle } from "@/theme/GlobalStyle";
+import { GlobalStyle } from "../theme/GlobalStyle";
 
 export default function BaseLayout({
   children,
@@ -15,9 +15,10 @@ export default function BaseLayout({
         <ThemeStateProvider>
           <AppThemeProvider>
             <GlobalStyle />
-            <Box width={"100vw"} height={"100vh"} bg={"background"}>
+            <Box width={"100vw"} height={"100vh"} bg={"black"}>
               <Header />
               {children}
+              <Footer />
             </Box>
           </AppThemeProvider>
         </ThemeStateProvider>
