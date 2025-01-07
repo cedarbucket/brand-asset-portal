@@ -42,11 +42,16 @@ export const DownloadLogos = () => {
           alignItems={["center", "start"]}
           justifyContent={"center"}
           gap={["xl", "2xl"]}
+          p={["m", "xl"]}
         >
           <Text color="white" fontSize={[24, 40]}>
             Logo Details
           </Text>
-          <Text color="white" fontSize={[16, 20]} textAlign={"center"}>
+          <Text
+            color="white"
+            fontSize={[16, 20]}
+            textAlign={["center", "start"]}
+          >
             This section contains variants of logos and representation of logos
             in different colors
           </Text>
