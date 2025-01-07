@@ -1,8 +1,8 @@
 "use client";
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
-import SunSVG from "@/public/assets/images/svgs/sun.svg";
-import MoonSVG from "@/public/assets/images/svgs/moon.svg";
+import SunSVG from "@/public/assets/svgs/sun.svg";
+import MoonSVG from "@/public/assets/svgs/moon.svg";
 import Image from "next/image";
 import { ThemeState } from "@/context/ThemeState";
 

@@ -3,7 +3,7 @@ import { StaticImageData } from "next/image";
 export type TLogoColor = {
   id: string;
   filePath: string;
-  src: string | StaticImageData;
+  src: string;
 };
 
 export type TLogoVariant = {

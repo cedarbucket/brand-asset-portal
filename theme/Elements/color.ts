@@ -1,5 +1,5 @@
 export const BASE_COLORS = {
-  primary: "#f9a602",
+  primary: "#000000",
   white: "#ffffff",
   black: "#000000",
   grey: "#C1C1C1",

@@ -1,16 +1,16 @@
 import { TLogoVariants } from "./types";
-import purePinesWhite from "../public/original/logos/pure_pines_white.png";
-import purePinesBrown from "../public/original/logos/pure_pines_brown.png";
-import purePinesBlack from "../public/original/logos/pure_pines_black.png";
-import pinePlateWhite from "../public/original/logos/pine-plate-white.png";
-import pinePlateBrown from "../public/original/logos/pine-plate-brown.png";
-import pinePlateBlack from "../public/original/logos/pine-plate-black.png";
-import fullIdentityWhite from "../public/original/logos/full-identity-white.png";
-import fullIdentityBrown from "../public/original/logos/full-identity-brown.png";
-import fullIdentityBlack from "../public/original/logos/full-identity-black.png";
-import signatureTextWhite from "../public/original/logos/signature-text-white.png";
-import signatureTextBrown from "../public/original/logos/signature-text-brown.png";
-import signatureTextBlack from "../public/original/logos/signature-text-black.png";
+import purePinesWhite from "@/assets/logos/pure_pines_white.png";
+import purePinesBrown from "@/assets/logos/pure_pines_brown.png";
+import purePinesBlack from "@/assets/logos/pure_pines_black.png";
+import pinePlateWhite from "@/assets/logos/pine_plate_white.png";
+import pinePlateBrown from "@/assets/logos/pine_plate_brown.png";
+import pinePlateBlack from "@/assets/logos/pine_plate_black.png";
+import fullIdentityWhite from "@/assets/logos/full_identity_white.png";
+import fullIdentityBrown from "@/assets/logos/full_identity_brown.png";
+import fullIdentityBlack from "@/assets/logos/full_identity_black.png";
+import signatureTextWhite from "@/assets/logos/signature_text_white.png";
+import signatureTextBrown from "@/assets/logos/signature_text_brown.png";
+import signatureTextBlack from "@/assets/logos/signature_text_black.png";
 
 export const HeaderLinks = [
   {
@@ -46,17 +46,17 @@ export const LogoVariants: TLogoVariants = {
       {
         id: "pure-pines-white",
         filePath: "",
-        src: purePinesWhite,
+        src: "/assets/images/pure_pines_white.png",
       },
       {
         id: "pure-pines-brown",
         filePath: "",
-        src: purePinesBrown,
+        src: "/assets/images/pure_pines_brown.png",
       },
       {
         id: "pure-pines-black",
         filePath: "",
-        src: purePinesBlack,
+        src: "/assets/images/pure_pines_black.png",
       },
     ],
   },
@@ -66,17 +66,17 @@ export const LogoVariants: TLogoVariants = {
       {
         id: "pine-plate-white",
         filePath: "",
-        src: "/original/logos/pine-plate-white.png",
+        src: "/assets/images/pine_plate_white.png",
       },
       {
         id: "pine-plate-brown",
         filePath: "",
-        src: "/original/logos/pine-plate-brown.png",
+        src: "/assets/images/pine_plate_brown.png",
       },
       {
         id: "pine-plate-black",
         filePath: "",
-        src: "/original/logos/pine-plate-black.png",
+        src: "/assets/images/pine_plate_black.png",
       },
     ],
   },
@@ -86,17 +86,17 @@ export const LogoVariants: TLogoVariants = {
       {
         id: "full-identity-white",
         filePath: "",
-        src: "/original/logos/full-identity-white.png",
+        src: "/assets/images/full_identity_white.png",
       },
       {
         id: "full-identity-brown",
         filePath: "",
-        src: "/original/logos/full-identity-brown.png",
+        src: "/assets/images/full_identity_brown.png",
       },
       {
         id: "full-identity-black",
         filePath: "",
-        src: "/original/logos/full-identity-black.png",
+        src: "/assets/images/full_identity_black.png",
       },
     ],
   },
@@ -106,17 +106,32 @@ export const LogoVariants: TLogoVariants = {
       {
         id: "signature-text-white",
         filePath: "",
-        src: "/original/logos/signature-text-white.png",
+        src: "/assets/images/signature_text_white.png",
       },
       {
         id: "signature-text-brown",
         filePath: "",
-        src: "/original/logos/signature-text-brown.png",
+        src: "/assets/images/signature_text_brown.png",
       },
       {
         id: "signature-text-black",
         filePath: "",
-        src: "/original/logos/signature-text-black.png",
+        src: "/assets/images/signature_text_black.png",
+      },
+      {
+        id: "signature-text-white",
+        filePath: "",
+        src: "/assets/images/signature_text_white.png",
+      },
+      {
+        id: "signature-text-brown",
+        filePath: "",
+        src: "/assets/images/signature_text_brown.png",
+      },
+      {
+        id: "signature-text-black",
+        filePath: "",
+        src: "/assets/images/signature_text_black.png",
       },
     ],
   },
