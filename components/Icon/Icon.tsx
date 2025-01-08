@@ -11,6 +11,7 @@ import {
   faCircleExclamation,
   faArrowUpFromBracket,
   faHome,
+  faCopy,
 } from "@fortawesome/free-solid-svg-icons";
 
 type IconProps = {
@@ -30,6 +31,7 @@ const IconMap: Record<string, IconDefinition> = {
   edit: faPenToSquare,
   error: faCircleExclamation,
   upload: faArrowUpFromBracket,
+  copy: faCopy,
 };
 
 export const Icon: React.FC<IconProps> = ({ name, size, color }) => {

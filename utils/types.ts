@@ -1,4 +1,4 @@
-import { StaticImageData } from "next/image";
+import { BASE_COLORS } from "@/theme";
 
 export type TLogoColor = {
   id: string;
@@ -18,3 +18,10 @@ export type TLogoVariants = {
     | "full_identity"
     | "signature_text"]: TLogoVariant;
 };
+
+export type TColors = Array<{
+  id: string;
+  color: keyof typeof BASE_COLORS;
+  label: string;
+  hex: string;
+}>;

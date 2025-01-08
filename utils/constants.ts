@@ -1,16 +1,5 @@
-import { TLogoVariants } from "./types";
-import purePinesWhite from "@/assets/logos/pure_pines_white.png";
-import purePinesBrown from "@/assets/logos/pure_pines_brown.png";
-import purePinesBlack from "@/assets/logos/pure_pines_black.png";
-import pinePlateWhite from "@/assets/logos/pine_plate_white.png";
-import pinePlateBrown from "@/assets/logos/pine_plate_brown.png";
-import pinePlateBlack from "@/assets/logos/pine_plate_black.png";
-import fullIdentityWhite from "@/assets/logos/full_identity_white.png";
-import fullIdentityBrown from "@/assets/logos/full_identity_brown.png";
-import fullIdentityBlack from "@/assets/logos/full_identity_black.png";
-import signatureTextWhite from "@/assets/logos/signature_text_white.png";
-import signatureTextBrown from "@/assets/logos/signature_text_brown.png";
-import signatureTextBlack from "@/assets/logos/signature_text_black.png";
+import { BASE_COLORS } from "@/theme";
+import { TColors, TLogoVariants } from "./types";
 
 export const HeaderLinks = [
   {
@@ -118,21 +107,33 @@ export const LogoVariants: TLogoVariants = {
         filePath: "",
         src: "/assets/images/signature_text_black.png",
       },
-      {
-        id: "signature-text-white",
-        filePath: "",
-        src: "/assets/images/signature_text_white.png",
-      },
-      {
-        id: "signature-text-brown",
-        filePath: "",
-        src: "/assets/images/signature_text_brown.png",
-      },
-      {
-        id: "signature-text-black",
-        filePath: "",
-        src: "/assets/images/signature_text_black.png",
-      },
     ],
   },
 };
+
+export const Colors: TColors = [
+  {
+    id: "black",
+    label: "Black",
+    color: "black",
+    hex: BASE_COLORS.black,
+  },
+  {
+    id: "eerie-black",
+    label: "Eerie Black",
+    color: "eerieBlack",
+    hex: BASE_COLORS.eerieBlack,
+  },
+  {
+    id: "coffee-brown",
+    label: "Coffee Brown",
+    color: "coffeeBrown",
+    hex: BASE_COLORS.coffeeBrown,
+  },
+  {
+    id: "white",
+    label: "White",
+    color: "white",
+    hex: BASE_COLORS.white,
+  },
+];
