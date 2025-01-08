@@ -13,7 +13,7 @@ import {
 export const HeaderLinks = [
   {
     label: "Logos",
-    href: "/",
+    href: "/logos",
   },
   {
     label: "Colors",
