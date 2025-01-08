@@ -27,7 +27,9 @@ export const Footer = () => {
         alignItems={"center"}
         gap={"m"}
       >
-        <Text color="white">Designed By Saibbyweb</Text>
+        <Text color="white" font={"poiretOneRegular"}>
+          Designed By Saibbyweb
+        </Text>
         <Box
           backgroundImage={`url("/assets/images/sw_white.png")`}
           backgroundSize={"cover"}

@@ -38,3 +38,29 @@ export type TMockups = Array<{
   filePath: string;
   preview: string;
 }>;
+
+export type TDocumentKey = "business-card" | "letterhead" | "email-signature";
+
+export type TDocuments = Array<{
+  key: TDocumentKey;
+  label: string;
+}>;
+
+export type TBusinessCards = Array<{
+  id: string;
+  label: string;
+  preview: string;
+  filePath: string;
+}>;
+
+export type TLetterhead = {
+  id: string;
+  filePath: string;
+  preview: string;
+};
+
+export type TEmailSignature = {
+  id: string;
+  filePath: string;
+  preview: string;
+};

@@ -1,5 +1,14 @@
 import { BASE_COLORS } from "@/theme";
-import { TColors, TFonts, TLogoVariants, TMockups } from "./types";
+import {
+  TBusinessCards,
+  TColors,
+  TDocuments,
+  TEmailSignature,
+  TFonts,
+  TLetterhead,
+  TLogoVariants,
+  TMockups,
+} from "./types";
 
 export const HeaderLinks = [
   {
@@ -173,3 +182,51 @@ export const Mockups: TMockups = [
     filePath: "/assets/pdfs/charlie.pdf",
   },
 ];
+
+export const DocumentTypes: TDocuments = [
+  {
+    key: "business-card",
+    label: "Business Card Designs",
+  },
+  {
+    key: "letterhead",
+    label: "Letterhead Designs",
+  },
+  {
+    key: "email-signature",
+    label: "Email Signature Designs",
+  },
+];
+
+export const BusinessCards: TBusinessCards = [
+  {
+    id: "standard",
+    preview: "/assets/svgs/standard-front.svg",
+    filePath: "/assets/pdfs/Standard.pdf",
+    label: "Standard",
+  },
+  {
+    id: "minimal",
+    preview: "/assets/svgs/minimal-front.svg",
+    filePath: "/assets/pdfs/Minimal.pdf",
+    label: "Minimal",
+  },
+  {
+    id: "premium",
+    preview: "/assets/svgs/premium-front.svg",
+    filePath: "/assets/pdfs/Premium.pdf",
+    label: "Premium",
+  },
+];
+
+export const Letterhead: TLetterhead = {
+  id: "body",
+  preview: "/assets/svgs/letterhead-body.svg",
+  filePath: "/assets/pdfs/Letterhead.pdf",
+};
+
+export const EmailSignature: TEmailSignature = {
+  id: "",
+  preview: "/assets/svgs/email-signature.svg",
+  filePath: "/assets/images/email_signature_image.png",
+};
