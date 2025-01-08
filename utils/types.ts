@@ -1,4 +1,4 @@
-import { BASE_COLORS } from "@/theme";
+import { BASE_COLORS, BASE_FONTS } from "@/theme";
 
 export type TLogoColor = {
   id: string;
@@ -24,4 +24,11 @@ export type TColors = Array<{
   color: keyof typeof BASE_COLORS;
   label: string;
   hex: string;
+}>;
+
+export type TFonts = Array<{
+  id: string;
+  name: string;
+  font: keyof typeof BASE_FONTS;
+  files: Array<string>;
 }>;

@@ -7,7 +7,6 @@ export const ViewColors = () => {
       width={"100%"}
       height={"100%"}
       p={["m", "2xl"]}
-      borderRed
       alignItems={"center"}
       gap={["m", "xl"]}
     >

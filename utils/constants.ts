@@ -1,5 +1,5 @@
 import { BASE_COLORS } from "@/theme";
-import { TColors, TLogoVariants } from "./types";
+import { TColors, TFonts, TLogoVariants } from "./types";
 
 export const HeaderLinks = [
   {
@@ -135,5 +135,23 @@ export const Colors: TColors = [
     label: "White",
     color: "white",
     hex: BASE_COLORS.white,
+  },
+];
+
+export const Fonts: TFonts = [
+  {
+    id: "neutra-text",
+    name: "Neutra Text",
+    font: "neutraTextBook",
+    files: [
+      "/assets/fonts/NeutraText-Book.otf",
+      "/assets/fonts/NeutraText-Bold.otf",
+    ],
+  },
+  {
+    id: "poiret-one",
+    font: "poiretOneRegular",
+    name: "Poiret One",
+    files: ["/assets/fonts/PoiretOne-Regular.ttf"],
   },
 ];

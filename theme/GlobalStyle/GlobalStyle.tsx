@@ -19,6 +19,30 @@ export const GlobalStyle = createGlobalStyle`
         font-display: swap;
     }
 
+    @font-face {
+        font-family: 'NeutraTextBook';
+        src: url('/assets/fonts/NeutraText-Book.otf') format('opentype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: "NeutraTextBold";
+        src: url('/assets/fonts/NeutraText-Bold.otf') format("opentype");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: "PoiretOneRegular";
+        src: url('/assets/fonts/PoiretOne-Regular.ttf') format("truetype");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+
     * {
         font-family: "MontserratRegular";
         box-sizing: border-box;
