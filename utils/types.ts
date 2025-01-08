@@ -32,3 +32,9 @@ export type TFonts = Array<{
   font: keyof typeof BASE_FONTS;
   files: Array<string>;
 }>;
+
+export type TMockups = Array<{
+  id: string;
+  filePath: string;
+  preview: string;
+}>;

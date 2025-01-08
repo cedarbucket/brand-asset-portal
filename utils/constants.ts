@@ -1,5 +1,5 @@
 import { BASE_COLORS } from "@/theme";
-import { TColors, TFonts, TLogoVariants } from "./types";
+import { TColors, TFonts, TLogoVariants, TMockups } from "./types";
 
 export const HeaderLinks = [
   {
@@ -153,5 +153,23 @@ export const Fonts: TFonts = [
     font: "poiretOneRegular",
     name: "Poiret One",
     files: ["/assets/fonts/PoiretOne-Regular.ttf"],
+  },
+];
+
+export const Mockups: TMockups = [
+  {
+    id: "alpha",
+    preview: "/assets/images/mockup_alpha_image.png",
+    filePath: "/assets/pdfs/alpha.pdf",
+  },
+  {
+    id: "beta",
+    preview: "/assets/images/mockup_beta_image.png",
+    filePath: "/assets/pdfs/beta.pdf",
+  },
+  {
+    id: "charlie",
+    preview: "/assets/images/mockup_charlie_image.png",
+    filePath: "/assets/pdfs/charlie.pdf",
   },
 ];
