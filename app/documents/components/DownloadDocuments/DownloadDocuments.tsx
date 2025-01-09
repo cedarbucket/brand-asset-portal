@@ -69,7 +69,6 @@ export const DownloadDocuments = () => {
       >
         <Component />
       </CenterBox>
-      ;
     </Box>
   );
 };

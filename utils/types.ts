@@ -64,3 +64,17 @@ export type TEmailSignature = {
   filePath: string;
   preview: string;
 };
+
+export type TSocialMediaPlatformKey = "facebook" | "instagram" | "linkedin";
+
+export type TSocialMediaPlatforms = Array<{
+  key: TSocialMediaPlatformKey;
+  label: string;
+}>;
+
+export type TSocialPlatform = Array<{
+  id: string;
+  label: string;
+  preview: Array<string>;
+  files: Array<string>;
+}>;

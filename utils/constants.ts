@@ -8,6 +8,8 @@ import {
   TLetterhead,
   TLogoVariants,
   TMockups,
+  TSocialMediaPlatforms,
+  TSocialPlatform,
 } from "./types";
 
 export const HeaderLinks = [
@@ -230,3 +232,102 @@ export const EmailSignature: TEmailSignature = {
   preview: "/assets/svgs/email-signature.svg",
   filePath: "/assets/images/email_signature_image.png",
 };
+
+export const SocialMediaPlatforms: TSocialMediaPlatforms = [
+  {
+    key: "facebook",
+    label: "Facebook",
+  },
+  {
+    key: "instagram",
+    label: "Instagram",
+  },
+  {
+    key: "linkedin",
+    label: "LinkedIn",
+  },
+];
+
+const ProfilePictures: Array<string> = [
+  "/assets/images/pure_pines_white.png",
+  "/assets/images/pure_pines_brown.png",
+  "/assets/images/pure_pines_black.png",
+  "/assets/images/pine_plate_white.png",
+  "/assets/images/pine_plate_brown.png",
+  "/assets/images/pine_plate_black.png",
+  "/assets/images/full_identity_white.png",
+  "/assets/images/full_identity_brown.png",
+  "/assets/images/full_identity_black.png",
+  "/assets/images/signature_text_white.png",
+  "/assets/images/signature_text_brown.png",
+  "/assets/images/signature_text_black.png",
+];
+
+export const FacebookAssets: TSocialPlatform = [
+  {
+    id: "profile-pictures",
+    label: "Profile Pictures",
+    preview: ProfilePictures,
+    files: ProfilePictures,
+  },
+  {
+    id: "cover-pictures",
+    label: "Cover Pictures",
+    preview: ["/assets/images/facebook_cover_one.png"],
+    files: ["/assets/images/facebook_cover_one.png"],
+  },
+  {
+    id: "event-cover-pictures",
+    label: "Event Cover Pictures",
+    preview: ["/assets/images/facebook_event_cover_one.png"],
+    files: ["/assets/images/facebook_event_cover_one.png"],
+  },
+  {
+    id: "group-cover-pictures",
+    label: "Group Cover Pictures",
+    preview: ["/assets/images/facebook_group_cover_one.png"],
+    files: ["/assets/images/facebook_group_cover_one.png"],
+  },
+];
+
+export const InstagramAssets: TSocialPlatform = [
+  {
+    id: "profile-pictures",
+    label: "Profile Pictures",
+    preview: ProfilePictures,
+    files: ProfilePictures,
+  },
+  {
+    id: "highlight-cover-pictures",
+    label: "Highlight Cover Pictures",
+    preview: ["/assets/images/instagram_highlight_one.png"],
+    files: ["assets/images/instagram_highlight_one.png"],
+  },
+  {
+    id: "reel-thumnail-pictures",
+    label: "Reel Thumbnail Pictures",
+    preview: ["assets/images/instagram_reel_thumbnail_one.png"],
+    files: ["assets/images/instagram_reel_thumbnail_one.png"],
+  },
+];
+
+export const LinkedinAssets: TSocialPlatform = [
+  {
+    id: "profile-pictures",
+    label: "Profile Pictures",
+    preview: ProfilePictures,
+    files: ProfilePictures,
+  },
+  {
+    id: "cover-pictures",
+    label: "Cover Pictures",
+    preview: ["/assets/images/linkedin_profile_cover_one.png"],
+    files: ["/assets/images/linkedin_profile_cover_one.png"],
+  },
+  {
+    id: "business-hero-pictures",
+    label: "Business Hero Pictures",
+    preview: ["/assets/images/linkedin_business_hero_one.png"],
+    files: ["/assets/images/linkedin_business_hero_one.png"],
+  },
+];
