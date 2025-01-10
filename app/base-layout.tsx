@@ -21,7 +21,7 @@ export default function BaseLayout({
         router.push("/");
       }
     }
-  }, [pathname]);
+  }, [pathname, router]);
 
   return (
     <html lang="en">

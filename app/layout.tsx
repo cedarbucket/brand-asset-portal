@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import BaseLayout from "./base-layout";
 
 export const metadata: Metadata = {
-  title: "Nextjs Styled Boilerplate",
+  title: "Cedar Bucket | Brand Asset Portal",
   description:
-    "Nextjs, styled components, styled system, typescript based boilerplate repo with dark and light mode functionality",
+    "Cedar Bucket is a brand asset portal that allows you to manage your brand assets in one place.",
 };
 
 export default function RootLayout({
