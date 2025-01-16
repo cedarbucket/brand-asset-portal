@@ -92,6 +92,7 @@ export const FileInputBox: React.FC<FileInputBoxProps> = ({
         >
           {field.value !== "" ? (
             <Image
+              unoptimized
               src={field.value}
               alt={"Preview"}
               width={160}
@@ -144,6 +145,7 @@ export const FileInputBox: React.FC<FileInputBoxProps> = ({
                 left={"20%"}
               >
                 <Image
+                  unoptimized
                   src={field.value}
                   alt={"Image"}
                   width={190}
