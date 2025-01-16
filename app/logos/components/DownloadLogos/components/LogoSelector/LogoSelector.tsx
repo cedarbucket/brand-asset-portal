@@ -111,6 +111,7 @@ export const LogoSelector: React.FC<LogoSelectorProps> = ({ colors }) => {
                 }}
               >
                 <Image
+                  unoptimized
                   src={c.src}
                   alt={c.id}
                   width={100}
